@@ -40,6 +40,18 @@ public class UserRegistrationProblem {
         return isValidEmail;
     }
 
+    //    @Desc:- it is a class which checks mobile number and validate it
+//    @Param:- takes number as the input to check
+//    @Return:- return true/false on the basis of input
+    public boolean ValidateMobileNumber(String Number) {
+        boolean isValidMobileNumber = Number.matches("^\\+\\d{2}?\\d{10}$");
+        if (!isValidMobileNumber)
+        {
+            System.out.println("mobile number is not valid ");
+        }
+        return isValidMobileNumber;
+    }
+
 
 //    it is the main method
     public static void main(String[] args) {
@@ -54,12 +66,17 @@ public class UserRegistrationProblem {
         String LastName = sc.next();
         System.out.println("enter email id");
         String Email = sc.next();
+        System.out.println("enter mobile number");
+        String Number = sc.next();
 
 //        checking the name by using the class ValidateFirstName
         user.ValidateFirstName(FirstName);
-//        checking the name by using the class ValidateFirstName
+//        checking the name by using the class ValidateLastName
         user.ValidateLastName(LastName);
-        //        checking the name by using the class ValidateFirstName
+        //        checking the email by using the class ValidateEmailId
         user.ValidateEmailId(Email);
+//        checking the mobile number by using the class ValidateMobileNumber
+        user.ValidateMobileNumber(Number);
+
     }
 }

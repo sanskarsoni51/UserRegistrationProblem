@@ -29,6 +29,17 @@ public class UserRegistrationProblem {
         return isValid;
     }
 
+    //    @Desc:- it is a class which checks email and validate it
+//    @Param:- takes email as the input to check
+//    @Return:- return true/false on the basis of input
+    public boolean ValidateEmailId(String Email) {
+        boolean isValidEmail = Email.matches("^[a-zA-Z0-9_%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+        if (!isValidEmail) {
+            System.out.println("Email id is not valid ");
+        }
+        return isValidEmail;
+    }
+
 
 //    it is the main method
     public static void main(String[] args) {
@@ -41,10 +52,14 @@ public class UserRegistrationProblem {
         String FirstName = sc.next();
         System.out.println("enter the last name");
         String LastName = sc.next();
+        System.out.println("enter email id");
+        String Email = sc.next();
 
 //        checking the name by using the class ValidateFirstName
         user.ValidateFirstName(FirstName);
 //        checking the name by using the class ValidateFirstName
         user.ValidateLastName(LastName);
+        //        checking the name by using the class ValidateFirstName
+        user.ValidateEmailId(Email);
     }
 }

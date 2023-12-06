@@ -52,6 +52,17 @@ public class UserRegistrationProblem {
         return isValidMobileNumber;
     }
 
+    //    @Desc:- it is a class which checks Password and validate it
+//    @Param:- takes password as the input to check
+//    @Return:- return true/false on the basis of input
+    public boolean ValidatePassword(String password) {
+        boolean isValidPassword = password.matches("[A-Za-z]{8,}");
+        if (!isValidPassword) {
+            System.out.println("Password has not minimum 8 characters");
+        }
+        return isValidPassword;
+    }
+
 
 //    it is the main method
     public static void main(String[] args) {
@@ -68,6 +79,8 @@ public class UserRegistrationProblem {
         String Email = sc.next();
         System.out.println("enter mobile number");
         String Number = sc.next();
+        System.out.println("enter password");
+        String Password = sc.next();
 
 //        checking the name by using the class ValidateFirstName
         user.ValidateFirstName(FirstName);
@@ -77,6 +90,8 @@ public class UserRegistrationProblem {
         user.ValidateEmailId(Email);
 //        checking the mobile number by using the class ValidateMobileNumber
         user.ValidateMobileNumber(Number);
+//         checking the password by using the class ValidatePassword
+        user.ValidatePassword(Password);
 
     }
 }

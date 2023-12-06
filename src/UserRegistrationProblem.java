@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -16,6 +17,18 @@ public class UserRegistrationProblem {
         return isValid;
     }
 
+    //    @Desc:- it is a class which checks last name and validate it
+//    @Param:- takes last name as the input to check
+//    @Return:- return true/false on the basis of input
+    public boolean ValidateLastName(String LastName){
+        boolean isValid = LastName.matches("[A-Z][a-z]{3,15}");
+        if(!isValid){
+            System.out.println("last name is not valid");
+        }
+
+        return isValid;
+    }
+
 
 //    it is the main method
     public static void main(String[] args) {
@@ -25,9 +38,13 @@ public class UserRegistrationProblem {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("enter the first name");
-        String name = sc.next();
+        String FirstName = sc.next();
+        System.out.println("enter the last name");
+        String LastName = sc.next();
 
 //        checking the name by using the class ValidateFirstName
-        user.ValidateFirstName(name);
+        user.ValidateFirstName(FirstName);
+//        checking the name by using the class ValidateFirstName
+        user.ValidateLastName(LastName);
     }
 }

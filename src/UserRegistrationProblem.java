@@ -59,10 +59,11 @@ public class UserRegistrationProblem {
 //        we are applying different conditions to check different things in password like
 //        ( for AT LEAST ONE UPPERCASE WE USED (?=.*[A-Z]))
 //        (FOR MINIMUM LENGTH 8 WE USED {8,})
+//        (FOR ATLEAST ONE NUMERIC DIGIT (?=.*\d))
 
-        boolean isValidPassword = password.matches("(?=.*[A-Z])[A-Za-z]{8,}");
+        boolean isValidPassword = password.matches("^(?=.*[A-Z])(?=.*\\d)[A-Za-z0-9]{8,}$");
         if (!isValidPassword) {
-            System.out.println("Password has not minimum 8 characters or an upper case letter");
+            System.out.println("Password invalid");
         }
         return isValidPassword;
     }

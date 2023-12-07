@@ -56,9 +56,13 @@ public class UserRegistrationProblem {
 //    @Param:- takes password as the input to check
 //    @Return:- return true/false on the basis of input
     public boolean ValidatePassword(String password) {
-        boolean isValidPassword = password.matches("[A-Za-z]{8,}");
+//        we are applying different conditions to check different things in password like
+//        ( for AT LEAST ONE UPPERCASE WE USED (?=.*[A-Z]))
+//        (FOR MINIMUM LENGTH 8 WE USED {8,})
+
+        boolean isValidPassword = password.matches("(?=.*[A-Z])[A-Za-z]{8,}");
         if (!isValidPassword) {
-            System.out.println("Password has not minimum 8 characters");
+            System.out.println("Password has not minimum 8 characters or an upper case letter");
         }
         return isValidPassword;
     }

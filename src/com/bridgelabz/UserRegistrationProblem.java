@@ -62,7 +62,7 @@ public class UserRegistrationProblem {
 //        (FOR MINIMUM LENGTH 8 WE USED {8,})
 //        (FOR ATLEAST ONE NUMERIC DIGIT (?=.*\d))
 
-        boolean isValidPassword = password.matches("^(?=.*[A-Z])(?=.*\\d)[A-Za-z0-9]{8,}$");
+        boolean isValidPassword = password.matches("^(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z0-9@$!%*?&]{8,}$");
         if (!isValidPassword) {
             System.out.println("Password invalid");
         }
